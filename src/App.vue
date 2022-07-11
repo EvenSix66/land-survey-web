@@ -1,32 +1,55 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="inspire">
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+    >
+      <!--  -->
+    </v-navigation-drawer>
+    <v-app-bar
+      app
+      color="white"
+    >
+      <v-container class="py-0 fill-height" fluid>
+        <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-toolbar-title>工业用地信息采集</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn
+          href="/"
+          text
+        > 首页
+        </v-btn>
+        <v-btn
+          href="/about"
+          text
+        > 关于
+        </v-btn>
+
+        <v-spacer></v-spacer>
+
+      </v-container>
+    </v-app-bar>
+
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-#nav {
-  padding: 30px;
-}
+export default {
+  name: 'App',
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+  data: () => ({
+    //
+    drawer: false,
+    links: [
+      'Dashboard',
+      'Messages',
+      'Profile',
+      'Updates',
+    ],
+  }),
+};
+</script>
