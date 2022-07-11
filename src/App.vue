@@ -16,15 +16,16 @@
         <v-spacer></v-spacer>
         <v-btn
           href="/"
-          text
-        > 首页
+          text>
+          首页
         </v-btn>
         <v-btn
-          href="/about"
-          text
-        > 关于
+          href="/addInfo"
+          text>
+          信息填报
         </v-btn>
 
+        <v-spacer></v-spacer>
         <v-spacer></v-spacer>
 
       </v-container>
@@ -44,12 +45,6 @@ export default {
   data: () => ({
     //
     drawer: false,
-    links: [
-      'Dashboard',
-      'Messages',
-      'Profile',
-      'Updates',
-    ],
   }),
 };
 </script>
